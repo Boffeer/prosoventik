@@ -805,4 +805,47 @@ body {
 .lfp-partnership-bullets-cards-card .lfp-partnership-bullets-cards-card__desc:last-child {
   margin-bottom: 50px;
 }
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+.lfp-partnership-bullets-cards-card__title,
+.lfp-partnership-bullets-cards-card__desc {
+  opacity: 0;
+  -webkit-transform: translate3d(30%, 0, 0);
+          transform: translate3d(30%, 0, 0);
+  -webkit-transition: all 0.45s;
+  transition: all 0.45s;
+}
+
+.animate__fadeInRight {
+  opacity: 1;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-transition: all 0.45s;
+  transition: all 0.45s;
+}
 /*# sourceMappingURL=index.css.map */

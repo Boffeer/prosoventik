@@ -129,21 +129,40 @@ function fillBullets(spreadElements) {
 		}
 	})
 }
+var bulletsTitles = [...document.querySelectorAll('.lfp-partnership-bullets-cards-card__title')]
+var bulletsDescs = [...document.querySelectorAll('.lfp-partnership-bullets-cards-card__desc')]
+var textAnimateClass = 'animate__fadeInRight';
+function animateBullets(spreadElements) {
+	documentHeight = window.innerHeight;
+	centerDistance = documentHeight / 2;
+
+	spreadElements.map((item) => {
+		if (item.getBoundingClientRect().top < centerDistance) {
+			item.classList.add(textAnimateClass)
+		} else if (item.getBoundingClientRect().top > centerDistance - 30) {
+			item.classList.remove(textAnimateClass)
+		}
+	})
+}
 document.addEventListener('scroll', function() {
 	fillBullets(circles);
+	animateBullets(bulletsTitles);
+	animateBullets(bulletsDescs);
 });
 fillBullets(circles)
 
+
+
 // new WOW().init();
-wow = new WOW(
-{
-	boxClass:     'wow',      // default
-	animateClass: 'animated', // default
-	offset:       300,          // default
-	mobile:       true,       // default
-	live:         true        // default
-}
-)
-wow.init();
+// wow = new WOW(
+// {
+// 	boxClass:     'wow',      // default
+// 	animateClass: 'animated', // default
+// 	offset:       300,          // default
+// 	mobile:       true,       // default
+// 	live:         true        // default
+// }
+// )
+// wow.init();
 
 });
