@@ -476,16 +476,16 @@ body {
 .lfp-partnership-bullets-cards-card-bullet--active .lfp-partnership-bullets-cards-card-bullet__filler, .lfp-partnership-bullets-cards-card-bullet--first .lfp-partnership-bullets-cards-card-bullet__filler {
   -webkit-transform: translateY(0);
           transform: translateY(0);
-  -webkit-transition: all 0.1s linear 0s;
-  transition: all 0.1s linear 0s;
+  -webkit-transition: all 0.12s linear 0s;
+  transition: all 0.12s linear 0s;
 }
 
 .lfp-partnership-bullets-cards-card-bullet__filler {
   background-color: var(--color-accent);
   width: 100%;
   height: 100%;
-  -webkit-transition: all 0.16s linear 0s;
-  transition: all 0.16s linear 0s;
+  -webkit-transition: all 0.12s linear 0s;
+  transition: all 0.12s linear 0s;
   -webkit-transform: translateY(-50px);
           transform: translateY(-50px);
 }
@@ -546,7 +546,7 @@ body {
     font-size: 34px;
   }
   .lfp-partnership-bullets-bar:after {
-    height: 43vh;
+    height: 42.4vh;
   }
 }
 

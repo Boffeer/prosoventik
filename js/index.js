@@ -1,7 +1,7 @@
+$(function(){
+
 var lfpCases = new Swiper('.lfp-cases-slider', {
-	// init: false,
 	slidesPerView: 1,
-	// spaceBetween: 30,
 	speed: 0,
 	onlyExternal: true,
 	noSwiping: true,
@@ -134,3 +134,16 @@ document.addEventListener('scroll', function() {
 });
 fillBullets(circles)
 
+// new WOW().init();
+wow = new WOW(
+{
+	boxClass:     'wow',      // default
+	animateClass: 'animated', // default
+	offset:       300,          // default
+	mobile:       true,       // default
+	live:         true        // default
+}
+)
+wow.init();
+
+});
