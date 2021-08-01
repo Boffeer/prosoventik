@@ -1,0 +1,603 @@
+.padding
+    height: 500px
+    position: relative
+    z-index: 2
+    background-color: #fff
+html
+    --c-accent: #FFB75E
+    --c-text-regular: #0f0f0f
+    --c-text-second: #444
+
+    --bg-button-primary: tomato
+    --bg-button-primary--hover: tomato
+
+    --fz-base: 16px
+    --fz-title-section: 32px
+
+    --sm: 576px
+    --md: 768px
+    --lg: 992px
+    --xl: 1200px
+    --xxl: 1400px
+
+    --z-dropdown: 10
+    --z-tooltip: 20
+    --z-sticky-header: 90
+    --z-popup: 100
+    --z-burger-button: 50
+    --z-burger: 110
+
+@mixin transition-mix ( $property: all, $duration: 0.2s, $timing: linear, $delay: 0s)
+    // transition-property: $property
+    // transition-duration: $duration
+    // transition-timing-function: $timing
+    // transition-delay: $delay
+    transition: $property $duration $timing $delay
+
+@mixin position-absolute ( $top: null, $right: null, $bottom: null, $left: null)
+    position: absolute
+    top: $top
+    right: $right
+    bottom: $bottom
+    left: $left
+
+@mixin buttonPrimary
+    background-image: var(--bg-button-primary)
+    color: #fff
+    font-size: 18px
+    font-weight: bold
+    padding-top: 14px
+    padding-bottom: 14px
+    padding-right: 40px
+    padding-left: 40px
+    box-shadow: var(--shadow-button)
+    border-radius: 48px
+    transition: all 0.2s
+    &:hover
+        background-image: var(--bg-button-primary--hover)
+        transition: all 0.2s
+        box-shadow: none
+        transform: translateY(2px)
+    &:focus
+        background-image: var(--bg-button-primary--hover)
+        transition: all 0.2s
+        box-shadow: none
+        transform: translateY(2px)
+
+*
+    box-sizing: border-box
+    outline: none
+a
+    text-decoration: none
+    color: inherit
+
+.hidden
+    visibility: hidden
+
+a, button
+    cursor: pointer
+
+input, button
+    border: none
+    padding: 0
+    background: none
+    display: inline-block
+
+p, ul, h1, h2, h3, h4, h5, h6, ol
+    padding: 0
+    margin: 0
+    font-weight: normal
+
+h2
+    font-size: var(--fz-title-section)
+
+ul, ol
+    list-style: none
+
+@font-face
+    font-family: 'Montserrat'
+    src: url('../fonts/Montserrat-Bold.woff2') format('woff2'), url('../fonts/Montserrat-Bold.woff') format('woff')
+    font-weight: bold
+    font-style: normal
+    font-display: swap
+
+@font-face
+    font-family: 'Montserrat'
+    src: url('../fonts/Montserrat-Regular.woff2') format('woff2'), url('../fonts/Montserrat-Regular.woff') format('woff')
+    font-weight: normal
+    font-style: normal
+    font-display: swap
+
+body
+    font-size: var(--fz-base)
+    color: var(--c-text-regular)
+    font-family: 'Montserrat', 'Arial', sans-serif
+
+@keyframes mouse
+    0%
+        @include transition-mix()
+        transform: translateY(0px)
+    50%
+        @include transition-mix()
+        transform: translateY(15px)
+    100%
+        @include transition-mix()
+        transform: translateY(0px)
+
+.container--partnership
+    position: relative
+    display: flex
+
+.lfp-cases
+    padding-top: 80px
+    padding-bottom: 80px
+    background-color: #fff
+    &__title
+        font-weight: bold
+        font-size: 44px
+        line-height: 110%
+        text-align: center
+        text-transform: uppercase
+        color: #1A1B1B
+        max-width: 907px
+        margin-left: auto
+        margin-right: auto
+        margin-bottom: 25px
+    &__desc
+        font-weight: normal
+        font-size: 22px
+        line-height: 140%
+        text-align: center
+        color: #1A1B1B
+        max-width: 907px
+        margin-left: auto
+        margin-right: auto
+        margin-bottom: 50px
+    &-slider
+        max-width: 970px
+        margin-left: auto
+        margin-right: auto
+        &-slide
+            padding-left: 15px
+            &-inner
+                max-width: 970px
+                margin-left: auto
+                margin-right: auto
+                background-color: #F7F7F7
+                border: 1px solid rgba(10, 11, 9, 0.04)
+                padding-top: 40px
+                padding-left: 40px
+                padding-right: 20px
+                // padding-bottom: 40px
+            &-profile
+                display: flex
+                align-items: center
+                justify-content: flex-start
+                margin-bottom: 40px
+                &__img
+                    width: 60px
+                    height: 60px
+                    margin-right: 25px
+                    object-fit: cover
+                &-bio
+                    &__name
+                        font-weight: normal
+                        font-size: 22px
+                        line-height: 120%
+                        color: #1A1B1B
+                        margin-bottom: 4px
+                    &__desc
+                        font-weight: bold
+                        font-size: 12px
+                        line-height: 100%
+                        letter-spacing: 0.05em
+                        text-transform: uppercase
+                        color: #949393
+            &-case
+                &__title
+                    font-weight: bold
+                    font-size: 12px
+                    line-height: 100%
+                    letter-spacing: 0.05em
+                    text-transform: uppercase
+                    color: #1A1B1B
+                    margin-bottom: 12px
+                    &--result
+                        background-color: #FFB976
+                        display: inline-block
+                        padding: 5px
+                &__desc
+                    margin-bottom: 30px
+                    font-size: 17px
+                    line-height: 140%
+                    color: #1A1B1B
+
+        &-notice
+            text-align: center
+            padding-top: 18px
+            padding-bottom: 44px
+            &-picture
+                width: 22px
+                height: 22px
+                object-fit: contain
+                @include transition-mix ()
+                &__img
+                    @include transition-mix()
+                    animation: mouse 4s infinite
+
+        &-nav
+            padding-left: 20px
+            padding-right: 20px
+            // max-width: 970px
+            // width: 100%
+            // margin-left: auto
+            // margin-right: auto
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 20px
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet
+    margin-left: 0
+    margin-right: 0
+.swiper-pagination-bullet
+    width: 100%
+    height: 4px
+    border-radius: 0
+    background-color: #F2F2F2
+    opacity: 1
+.swiper-pagination-bullet.swiper-pagination-bullet-active
+    background-color: #FFB975
+
+.lfp-cases-swiper-wrapper
+    // flex-wrap: wrap
+    display: block
+    position: relative
+    // height: 560px
+.lfp-cases-slider-slide
+    position: absolute
+    opacity: 0
+    z-index: 1
+    // @include transition-mix (transform, .4s)
+    @include transition-mix (all, .3s)
+.lfp-cases-slider-slide.swiper-slide.swiper-slide-prev
+    width: 100%
+    transform: translateX(-100vw)
+    opacity: 1
+    z-index: 4
+    // @include transition-mix (opacity, 0)
+    @include transition-mix (all, .4s)
+
+.lfp-cases-slider-slide.swiper-slide.swiper-slide-active
+    opacity: 1
+    z-index: 3
+    @include transition-mix (all, .4s)
+.lfp-cases-slider-slide.swiper-slide.swiper-slide-active .lfp-cases-slider-slide-inner
+    background-image: url('../img/lfp-cases/logo.png')
+    background-position: bottom right
+    background-size: 40%
+    background-repeat: no-repeat
+
+.lfp-cases-slider-slide.swiper-slide.swiper-slide-next
+    opacity: 1
+    z-index: 2
+    left: 36px
+    transform: scale(0.95)
+    transition: none
+// .swiper-slide-next ~ .lfp-cases-slider-slide
+//     opacity: 1
+//     z-index: 3
+//     left: 20px
+.lfp-cases-slider-slide-inner
+    width: calc(100% - 30px)
+    margin-left: 0
+.lfp-cases-slider-slide
+    &:last-child
+        left: 70px
+        opacity: 0.5
+        transform: scale(0.90)
+.lfp-cases-slider-slide.swiper-slide-active
+    &:last-child
+        left: 0
+        opacity: 1
+        transform: scale(1)
+// .swiper-slide
+    // visibility: none
+// .swiper-slide-active
+    // visibility: initial
+
+.lfp-partnership
+    --section-bg: #f7f7f7
+    --color-accent: #ffb976
+    background-color: var(--section-bg)
+    padding-top: 80px
+    padding-bottom: 80px
+    &-heading
+        position: relative
+        width: 39%
+        // padding-bottom: 80px
+        &-sticky
+            position: sticky
+            top: 20px
+            left: 0
+        &__title
+            font-weight: bold
+            font-size: 44px
+            line-height: 110%
+            text-transform: uppercase
+            color: #1A1B1B
+            // margin-bottom: 500px
+            margin-bottom: 63.8vh
+    &-bullets
+        display: flex
+        width: 57%
+        margin-left: auto
+        &-bar
+            width: 4px
+            height: calc(100% + 50vh)
+            margin-top: -50vh
+            background-color: #E8E8E8
+            position: relative
+            margin-right: 53px
+            z-index: 1
+            &:before
+                content: ''
+                display: block
+                width: 200%
+                height: 50vh
+                position: absolute
+                top: 0
+                left: -1px
+                background-color: var(--section-bg)
+                z-index: 2
+            &:after
+                content: ''
+                display: block
+                width: 200%
+                height: 38vh
+                position: absolute
+                bottom: 0
+                left: -1px
+                background-color: var(--section-bg)
+                z-index: 2
+            &__filler
+                background-color: var(--color-accent)
+                height: 50vh
+                position: sticky
+                top: 0
+                left: 0
+        &-cards
+            width: 100%
+            &-card
+                position: relative
+                &-bullet
+                    position: absolute
+                    left: -80px
+                    z-index: 2
+                    width: 50px
+                    height: 50px
+                    border-radius: 100%
+                    overflow: hidden
+                    background-color: #e8e8e8
+                    color: #fff
+                    &--active,
+                    &--first
+                        // background-color: var(--color-accent)
+                        .lfp-partnership-bullets-cards-card-bullet__filler
+                            transform: translateY(0)
+                            @include transition-mix ()
+                    &__filler
+                        background-color: var(--color-accent)
+                        width: 100%
+                        height: 100%
+                        @include transition-mix ()
+                        transform: translateY(-50px)
+
+                    &__number
+                        position: absolute
+                        left: 50%
+                        top: 50%
+                        transform: translate(-50%, -50%)
+                        font-size: 16px
+                        font-weight: bold
+                &__title
+                    font-size: 22px
+                    line-height: 120%
+                    color: #1A1B1B
+                    margin-bottom: 20px
+                &__desc
+                    font-size: 16px
+                    line-height: 150%
+                    color: #1A1B1B
+                    margin-bottom: 50px
+            &__button
+                font-weight: bold
+                font-size: 12px
+                line-height: 100%
+                letter-spacing: 0.05em
+                text-transform: uppercase
+                color: #FFFFFF
+                text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15)
+                background-color: var(--color-accent)
+                padding: 18px 36px
+                border-radius: 4px
+                @include transition-mix ()
+                &:hover,
+                &:focus
+                    background-color: darken(#FFB976, 10%)
+                    @include transition-mix ()
+
+@media (max-width: 1300px)
+    .lfp-partnership
+        &-heading
+            &__title
+                font-size: 38px
+@media (max-width: 1200px)
+    .lfp-partnership
+        &-heading
+            &__title
+                font-size: 34px
+    .lfp-partnership-bullets-bar:after
+        height: 43vh
+
+@keyframes cases-swipe
+    0%
+        @include transition-mix()
+        transform: translateX(0px)
+    60%
+        @include transition-mix()
+        transform: translateX(20px)
+    100%
+        @include transition-mix()
+        transform: translateX(0px)
+
+@media (max-width: 1100px)
+    .lfp-cases-slider-notice
+        padding-top: 10px
+        padding-bottom: 10px
+    .lfp-cases-slider-notice-picture__img
+        animation: cases-swipe 4s infinite
+
+@media (max-width: 992px)
+    .container--partnership
+        flex-wrap: wrap
+    .lfp-partnership-bullets-bar:after
+        height: 40vh
+    .lfp-partnership
+        &-heading
+            position: static
+            width: 100%
+            height: calc(100%)
+            z-index: 3
+            top: -170px
+            &-sticky
+                display: flex
+                justify-content: space-between
+                width: auto
+                align-items: center
+                max-width: 100vw
+                // background-color: #f7f7f7
+                // padding-right: 20px
+
+                z-index: 3
+                top: 0
+                position: static
+                margin-bottom: 40px
+            &__title
+                margin-bottom: 0
+                max-width: 50%
+                margin-left: auto
+                margin-right: auto
+        &-bullets
+            max-width: 740px
+            width: 100%
+    .lfp-cases
+        &__title
+            font-size: 34px
+            max-width: 600px
+            margin-left: auto
+            margin-right: auto
+        &__desc
+            font-size: 20px
+            max-width: 600px
+            margin-left: auto
+            margin-right: auto
+    .lfp-partnership-bullets
+        padding-left: 60px
+
+@media (max-width: 769px)
+    .lfp-partnership
+        &-heading
+            &-sticky
+                padding-top: 60px
+                // margin-left: -37px
+                // padding-left: 30px
+                // margin-right: -150px
+                // padding-right: 60px
+                position: static
+                &__title
+                    margin-left: 60px
+@media (max-width: 767px)
+    .lfp-partnership
+        &-heading
+            &-sticky
+                margin-left: -127px
+@media (max-width: 587px)
+    .lfp-cases-swiper-wrapper
+        // height: 720px
+    .lfp-partnership-heading-sticky
+        padding-top: 0
+        margin-left: 0
+    .lfp-cases-slider-slide.swiper-slide.swiper-slide-next
+        left: 24px
+    .lfp-cases-slider-slide:last-child
+        left: 50px
+    .lfp-partnership-heading__title
+        max-width: 100%
+        font-size: 26px
+    .lfp-partnership-heading__logo
+        height: 50px
+    .lfp-partnership-bullets
+        padding-left: 20px
+    .lfp-partnership-bullets-cards-card__desc br
+        display: none
+    .lfp-partnership-bullets-cards__button
+        margin-left: -15px
+        z-index: 5
+        max-width: 310px
+        line-height: 1.3
+    .lfp-partnership-bullets-cards-card-bullet
+        left: -72px
+    .lfp-partnership-bullets-bar
+        margin-right: 45px
+    .lfp-partnership-bullets-bar:after
+        height: 46vh
+@media (max-width: 428px)
+    .lfp-cases
+        padding-top: 50px
+        padding-bottom: 50px
+    .lfp-cases__title
+        font-size: 24px
+    .lfp-cases__desc
+        font-size: 16px
+    .lfp-cases-slider-slide-inner
+        padding-left: 30px
+        padding-top: 30px
+    .lfp-cases-slider-slide-profile
+        margin-bottom: 30px
+        &-bio__name
+            font-size: 16px
+    .lfp-cases-slider-slide-case__desc
+        font-size: 16px
+    .lfp-partnership-bullets-cards
+        position: relative
+        z-index: 2
+@media (max-width: 380px)
+    .lfp-partnership-bullets-bar:after
+        height: 53vh
+@media (max-width: 360px)
+    .lfp-partnership-bullets-bar:after
+        height: 60vh
+    .lfp-partnership-bullets-cards__button
+        margin-left: -55px
+@media (max-width: 320px)
+    .lfp-partnership-heading__logo
+        display: none
+    .lfp-cases-slider-slide-inner
+        padding-left: 20px
+        padding-top: 20px
+    .lfp-cases-slider-slide-profile__img
+        width: 50px
+        height: 50px
+        margin-right: 15px
+    .lfp-cases-slider-slide-case__desc
+        font-size: 14px
+    .lfp-partnership-bullets-cards__button
+        padding-left: 15px
+        padding-right: 15px
+
+.lfp-partnership-bullets-cards-card
+    .lfp-partnership-bullets-cards-card__desc
+        margin-bottom: 20px
+        &:last-child
+            margin-bottom: 50px
