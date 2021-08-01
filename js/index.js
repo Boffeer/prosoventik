@@ -49,11 +49,25 @@ lfpCases.on('scroll', function(e){
 /*
  * On slide changing
  */
+
+var slideHeightModifier = 0;
+if (window.innerHeight > 1199) {
+	slideHeightModifier = 50;
+} else {
+	slideHeightModifier = 170;
+}
+var initSlideHeightModifier = 0;
+if (window.innerHeight < 1199) {
+	slideHeightModifier = 50;
+} else {
+	slideHeightModifier = 170;
+}
+
 lfpCases.on('slideChangeTransitionStart', function(ev) {
 	$('.lfp-cases-swiper-wrapper').css({'transform': 'translate3d(0, 0px, 0px)', 'transition-duration': '0ms'});
 	var currentSlideNumber = lfpCases.realIndex;
 	var slideHeight = $('.lfp-cases-slider-slide:nth-child(' + currentSlideNumber + ') .lfp-cases-slider-slide-inner').height();
-	slideHeight+= 50;
+	slideHeight+= slideHeightModifier;
 	$('.lfp-cases-swiper-wrapper').css({'height': slideHeight + 'px'});
 });
 
@@ -65,8 +79,10 @@ lfpCases.on('slideChangeTransitionStart', function(ev) {
 var currentSlideNumber = lfpCases.realIndex;
 var slideHeight = $('.lfp-cases-slider-slide:nth-child(' + currentSlideNumber + 1 + ') .lfp-cases-slider-slide-inner').height();
 console.log(slideHeight)
-slideHeight+= 170;
+// slideHeight+= 170;
+slideHeight+= initSlideHeightModifier + 120;
 $('.lfp-cases-swiper-wrapper').css({'height': slideHeight + 'px'});
+
 
 
 /*
