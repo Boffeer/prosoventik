@@ -264,19 +264,14 @@ body
     width: 100%
     transform: translateX(-100vw)
     opacity: 1
-    z-index: 4
+    z-index: 3
     // @include transition-mix (opacity, 0)
-    @include transition-mix (all, .4s)
+    @include transition-mix (transform, .4s)
 
 .lfp-cases-slider-slide.swiper-slide.swiper-slide-active
     opacity: 1
     z-index: 3
     @include transition-mix (all, .4s)
-.lfp-cases-slider-slide.swiper-slide.swiper-slide-active .lfp-cases-slider-slide-inner
-    background-image: url('../img/lfp-cases/logo.png')
-    background-position: bottom right
-    background-size: 40%
-    background-repeat: no-repeat
 
 .lfp-cases-slider-slide.swiper-slide.swiper-slide-next
     opacity: 1
@@ -291,6 +286,10 @@ body
 .lfp-cases-slider-slide-inner
     width: calc(100% - 30px)
     margin-left: 0
+    background-image: url('../img/lfp-cases/logo.png')
+    background-position: bottom right
+    background-size: 40%
+    background-repeat: no-repeat
 
 .lfp-cases-slider-slide
     &:last-child
