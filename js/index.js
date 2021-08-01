@@ -7,6 +7,7 @@ var lfpCases = new Swiper('.lfp-cases-slider', {
 	noSwiping: true,
 	mousewheel: true,
 	allowTouchMove: false,
+	// autoHeight: true,
 	pagination: {
 		el: '.lfp-cases-slider-nav',
 		clickable: true,
@@ -15,41 +16,9 @@ var lfpCases = new Swiper('.lfp-cases-slider', {
 
 
 
-/**
- * MouseWheel event listener
- */
-var isScrolled = false;
-lfpCases.on('scroll', function(e){
-	/*
-		WheelUp is e.mousewheel.recentWheelEvents[0].direction == 1
-		WheelDown is e.mousewheel.recentWheelEvents[0].direction == -1
-	*/ 
-	if (isScrolled) {
-		// MouseWheelDown === -1
-		// console.log(e.mousewheel.recentWheelEvents[0].direction, 'Прошлое');
-		if (e.mousewheel.recentWheelEvents[1].direction === -1) {
-			console.log('slide next')
-			// setTimeout(function() {
-				// $('.lfp-cases-swiper-wrapper').css({'transform': 'translateX(0)'})
-			// }, 10)
-		} else if (e.mousewheel.recentWheelEvents[1].direction === 1) {
-		};
-			// setTimeout(function() {
-			// 	$('.lfp-cases-swiper-wrapper').css({'transform': 'translateX(0)'})
-			// }, 10)
-	} else {
-		// firstscroll
-		// console.log(e.mousewheel.recentWheelEvents[0].direction, 'Текущее');
-	}
-	isScrolled = true;
-});
-
-
-
 /*
- * On slide changing
+ * Change slide height on slide changing
  */
-
 var slideHeightModifier = 0;
 if (window.innerHeight > 1199) {
 	slideHeightModifier = 50;
@@ -63,38 +32,34 @@ if (window.innerHeight < 1199) {
 	slideHeightModifier = 170;
 }
 
-lfpCases.on('slideChangeTransitionStart', function(ev) {
+lfpCases.on('slideChangeTransitionStart', function() {
 	$('.lfp-cases-swiper-wrapper').css({'transform': 'translate3d(0, 0px, 0px)', 'transition-duration': '0ms'});
-	var currentSlideNumber = lfpCases.realIndex;
+	var currentSlideNumber = lfpCases.realIndex + 1;
 	var slideHeight = $('.lfp-cases-slider-slide:nth-child(' + currentSlideNumber + ') .lfp-cases-slider-slide-inner').height();
 	slideHeight+= slideHeightModifier;
 	$('.lfp-cases-swiper-wrapper').css({'height': slideHeight + 'px'});
+	$('.lfp-cases-slider-slide-inner').css({'height': 'calc(100%)'});
 });
-
-
-
 /*
  * init slider height
  */
 var currentSlideNumber = lfpCases.realIndex;
 var slideHeight = $('.lfp-cases-slider-slide:nth-child(' + currentSlideNumber + 1 + ') .lfp-cases-slider-slide-inner').height();
-console.log(slideHeight)
-// slideHeight+= 170;
 slideHeight+= initSlideHeightModifier + 120;
 $('.lfp-cases-swiper-wrapper').css({'height': slideHeight + 'px'});
+$('.lfp-cases-slider-slide-inner').css({'height': 'calc(100%)'});
 
 
 
 /*
  * After slider reach end slide
  */
-var afterLfpCasesBlockId = '.lfp-partnership'
-var resizeCounter = 0
 lfpCases.on('reachEnd', function () {
+	var currentOffset = $('html').scrollTop();
 	$('html, body').animate({
-		scrollTop: $(afterLfpCasesBlockId).offset().top
+		scrollTop: currentOffset + 700
 	}, 300, function () {
-		// window.location.hash = '#numbers';
+		// window.location.hash = '#';
 	});
 });
 

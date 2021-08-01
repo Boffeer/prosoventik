@@ -268,8 +268,8 @@ body {
 .lfp-cases-slider-notice-picture__img {
   -webkit-transition: all 0.2s linear 0s;
   transition: all 0.2s linear 0s;
-  -webkit-animation: mouse 4s infinite;
-          animation: mouse 4s infinite;
+  -webkit-animation: mouse 2.2s infinite;
+          animation: mouse 2.2s infinite;
 }
 
 .lfp-cases-slider-nav {
@@ -847,5 +847,10 @@ body {
           transform: translateZ(0);
   -webkit-transition: all 0.45s;
   transition: all 0.45s;
+}
+
+.lfp-partnership-bullets-cards-card-inner {
+  width: 100%;
+  overflow-x: hidden;
 }
 /*# sourceMappingURL=index.css.map */
