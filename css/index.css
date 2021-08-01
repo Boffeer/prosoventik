@@ -545,7 +545,7 @@ body {
     font-size: 34px;
   }
   .lfp-partnership-bullets-bar:after {
-    height: 42.4vh;
+    height: 310px;
   }
 }
 
@@ -614,7 +614,7 @@ body {
         flex-wrap: wrap;
   }
   .lfp-partnership-bullets-bar:after {
-    height: 40vw;
+    height: 300px;
   }
   .lfp-partnership-heading {
     position: static;
@@ -681,6 +681,9 @@ body {
   .lfp-partnership-heading-sticky {
     margin-left: -127px;
   }
+  .lfp-partnership-bullets-bar:after {
+    height: 330px;
+  }
 }
 
 @media (max-width: 587px) {
@@ -719,9 +722,6 @@ body {
   .lfp-partnership-bullets-bar {
     margin-right: 45px;
   }
-  .lfp-partnership-bullets-bar:after {
-    height: 46vh;
-  }
 }
 
 @media (max-width: 428px) {
@@ -748,6 +748,9 @@ body {
   .lfp-cases-slider-slide-case__desc {
     font-size: 16px;
   }
+  .lfp-partnership-heading__logo {
+    margin-top: -80px;
+  }
   .lfp-partnership-bullets-cards {
     position: relative;
     z-index: 2;
@@ -760,6 +763,9 @@ body {
 @media (max-width: 380px) {
   .lfp-partnership-bullets-bar:after {
     height: 114vw;
+  }
+  .lfp-partnership-bullets-cards__button {
+    margin-left: -45px;
   }
 }
 
