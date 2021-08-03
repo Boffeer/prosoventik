@@ -56,11 +56,11 @@ $('.lfp-cases-slider-slide-inner').css({'height': 'calc(100%)'});
  */
 lfpCases.on('reachEnd', function () {
 	var currentOffset = $('html').scrollTop();
-	// $('html, body').animate({
-	// 	scrollTop: currentOffset + 700
-	// }, 300, function () {
+	$('html, body').animate({
+		scrollTop: currentOffset + 700
+	}, 300, function () {
 		// window.location.hash = '#';
-	// });
+	});
 });
 
 
