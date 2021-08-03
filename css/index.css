@@ -319,6 +319,8 @@ body {
   -webkit-transition: all 0s linear 0s;
   transition: all 0s linear 0s;
   left: 36px;
+  -webkit-transform: translateX(-100vw);
+          transform: translateX(-100vw);
 }
 
 .lfp-cases-slider-slide p,
@@ -352,6 +354,8 @@ body {
 .lfp-cases-slider-slide.swiper-slide.swiper-slide-active {
   opacity: 1;
   z-index: 3;
+  -webkit-transform: translateX(0vw);
+          transform: translateX(0vw);
   -webkit-transition: all 0.65s linear 0s;
   transition: all 0.65s linear 0s;
   left: 0;
