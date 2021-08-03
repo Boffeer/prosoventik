@@ -14,7 +14,48 @@ var lfpCases = new Swiper('.lfp-cases-slider', {
 	},
 });
 
+function lfpCasesChangeSlide() {
+	lfpCases.mousewheel.disable()	
+	setTimeout(function() {
+		lfpCases.mousewheel.enable()	
+	}, 900)
+}
+/**
+ * MouseWheel event listener
+ */
 
+$('.lfp-cases-slider').bind('mousewheel DOMMouseScroll', function(e) {
+    var scrollTo = null;
+    if (e.type == 'mousewheel') {
+        scrollTo = (e.originalEvent.wheelDelta * -1);
+    }
+    else if (e.type == 'DOMMouseScroll') {
+        scrollTo = 40 * e.originalEvent.detail;
+    }
+    if (scrollTo) {
+        e.preventDefault();
+        $(this).scrollTop(scrollTo + $(this).scrollTop());
+    }
+});
+
+// var isScrolled = false;
+// lfpCases.on('scroll', function(e){
+// 	/*
+// 		WheelUp is e.mousewheel.recentWheelEvents[0].direction == 1
+// 		WheelDown is e.mousewheel.recentWheelEvents[0].direction == -1
+// 	*/ 
+// 	if (isScrolled) {
+// 		// MouseWheelDown === -1
+// 		// console.log(e.mousewheel.recentWheelEvents[0].direction, 'Прошлое');
+// 		if (e.mousewheel.recentWheelEvents[1].direction === -1) {
+// 			console.log('slide next')
+// 		} else if (e.mousewheel.recentWheelEvents[1].direction === 1) {
+// 			console.log('slide prev')
+// 		};
+// 	} else { // firstscroll
+// 	}
+// 	isScrolled = true;
+// });
 
 /*
  * Change slide height on slide changing
@@ -39,6 +80,7 @@ lfpCases.on('slideChangeTransitionStart', function() {
 	slideHeight+= slideHeightModifier;
 	$('.lfp-cases-swiper-wrapper').css({'height': slideHeight + 'px'});
 	$('.lfp-cases-slider-slide-inner').css({'height': 'calc(100%)'});
+	lfpCasesChangeSlide();
 });
 /*
  * init slider height

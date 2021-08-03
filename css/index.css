@@ -326,17 +326,17 @@ body {
           transform: translateX(-100vw);
   opacity: 1;
   z-index: 3;
-  -webkit-transition: -webkit-transform 0.4s linear 0s;
-  transition: -webkit-transform 0.4s linear 0s;
-  transition: transform 0.4s linear 0s;
-  transition: transform 0.4s linear 0s, -webkit-transform 0.4s linear 0s;
+  -webkit-transition: -webkit-transform 0.45s linear 0s;
+  transition: -webkit-transform 0.45s linear 0s;
+  transition: transform 0.45s linear 0s;
+  transition: transform 0.45s linear 0s, -webkit-transform 0.45s linear 0s;
 }
 
 .lfp-cases-slider-slide.swiper-slide.swiper-slide-active {
   opacity: 1;
   z-index: 3;
-  -webkit-transition: all 0.4s linear 0s;
-  transition: all 0.4s linear 0s;
+  -webkit-transition: all 0.65s linear 0s;
+  transition: all 0.65s linear 0s;
 }
 
 .lfp-cases-slider-slide.swiper-slide.swiper-slide-next {
