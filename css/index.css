@@ -321,6 +321,12 @@ body {
   left: 36px;
 }
 
+.lfp-cases-slider-slide p,
+.lfp-cases-slider-slide h3,
+.lfp-cases-slider-slide h4 {
+  opacity: 0;
+}
+
 .lfp-cases-slider-slide.swiper-slide.swiper-slide-prev {
   width: 100%;
   -webkit-transform: translateX(-100vw);
@@ -331,6 +337,12 @@ body {
   transition: -webkit-transform 0.45s linear 0s;
   transition: transform 0.45s linear 0s;
   transition: transform 0.45s linear 0s, -webkit-transform 0.45s linear 0s;
+}
+
+.lfp-cases-slider-slide.swiper-slide.swiper-slide-prev p,
+.lfp-cases-slider-slide.swiper-slide.swiper-slide-prev h3,
+.lfp-cases-slider-slide.swiper-slide.swiper-slide-prev h4 {
+  opacity: 1;
 }
 
 .lfp-cases-slider-slide.swiper-slide.swiper-slide-active {
@@ -375,6 +387,12 @@ body {
   opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+.lfp-cases-slider-slide.swiper-slide-active p,
+.lfp-cases-slider-slide.swiper-slide-active h3,
+.lfp-cases-slider-slide.swiper-slide-active h4 {
+  opacity: 1;
 }
 
 .lfp-partnership {
