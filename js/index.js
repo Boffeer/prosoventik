@@ -82,6 +82,14 @@ lfpCases.on('slideChangeTransitionStart', function() {
 	$('.lfp-cases-slider-slide-inner').css({'height': 'calc(100%)'});
 	lfpCasesChangeSlide();
 });
+
+$('.swiper-pagination-bullet').each(function() {
+	var currentSlideNumber = lfpCases.realIndex + 1;
+	var slideHeight = $('.lfp-cases-slider-slide:nth-child(' + currentSlideNumber + ') .lfp-cases-slider-slide-inner').height();
+	slideHeight+= slideHeightModifier;
+	$('.lfp-cases-swiper-wrapper').css({'height': slideHeight + 'px'});
+	$('.lfp-cases-slider-slide-inner').css({'height': 'calc(100%)'});
+})
 /*
  * init slider height
  */
