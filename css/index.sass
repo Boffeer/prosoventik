@@ -260,6 +260,7 @@ body
     z-index: 1
     // @include transition-mix (transform, .4s)
     @include transition-mix (all, .3s)
+    left: 36px
 .lfp-cases-slider-slide.swiper-slide.swiper-slide-prev
     width: 100%
     transform: translateX(-100vw)
@@ -272,11 +273,12 @@ body
     opacity: 1
     z-index: 3
     @include transition-mix (all, .65s)
+    left: 0
 
 .lfp-cases-slider-slide.swiper-slide.swiper-slide-next
     opacity: 1
     z-index: 2
-    left: 36px
+    // left: 36px
     transform: scale(0.95)
     transition: none
 // .swiper-slide-next ~ .lfp-cases-slider-slide
@@ -296,6 +298,8 @@ body
         left: 70px
         opacity: 0.5
         transform: scale(0.90)
+    &:nth-last-child(2) ~ .lfp-cases-slider-slide:last-child
+        left: 36px
 .lfp-cases-slider-slide.swiper-slide-active
     &:last-child
         left: 0
