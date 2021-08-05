@@ -107,10 +107,19 @@ $('.lfp-cases-slider-slide-inner').css({'height': 'calc(100%)'});
  * After slider reach end slide
  */
 var additionalOffset = 700; //Change this to scroll deeper
+
 lfpCases.on('reachEnd', function () {
 	var currentOffset = $('html').scrollTop();
 	$('html, body').animate({
 		scrollTop: currentOffset + additionalOffset
+	}, 600, function () {
+		// window.location.hash = '#';
+	});
+});
+lfpCases.on('reachBeginning', function () {
+	var currentOffset = $('html').scrollTop();
+	$('html, body').animate({
+		scrollTop: currentOffset - additionalOffset
 	}, 600, function () {
 		// window.location.hash = '#';
 	});
